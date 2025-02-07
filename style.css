@@ -1,0 +1,75 @@
+/*-------------------------------------------
+共通 css
+-------------------------------------------*/
+:root {
+    --main-bg-color: #050507;
+    --font-color: #ffffff;
+}
+* {
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+body {
+    font-family: "Source Sans 3", serif;
+    margin: unset;
+    background-color: var(--main-bg-color);
+}
+img {
+    display: block;
+}
+h1, h2, p, button {
+    margin: unset;
+    padding: unset;
+}
+h1 {
+    font-weight: 300;
+    font-size: 48px;
+    color: var(--font-color);
+}
+h2 {
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--font-color);
+}
+a, a:visited {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--font-color);
+    text-decoration: none;
+}
+p {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--font-color);
+}
+p.copy {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--font-color);
+}
+button {
+    background-color: var(--main-bg-color);
+    border: unset;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--font-color);
+}
+div.container {
+    max-width: px;
+    margin: 0 auto;
+}
+
+/* 狭い画面向けの既定の CSS レイアウト値 */
+
+@media (min-width: 480px) {
+  /* 中型の画面向けの CSS */
+}
+
+@media (min-width: 800px) {
+  /* 広い画面向けの CSS */
+}
+
+@media (min-width: 1100px) {
+  /* 本当に広い画面向けの CSS */
+}
