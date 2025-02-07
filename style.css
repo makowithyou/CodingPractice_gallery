@@ -16,11 +16,12 @@ body {
 }
 img {
     display: block;
+    width: 100%;
 }
 li {
     list-style: none;
 }
-h1, h2, p, menu, button {
+h1, h2, p, menu, button, ul {
     margin: unset;
     padding: unset;
 }
@@ -28,11 +29,16 @@ h1 {
     font-weight: 300;
     font-size: 48px;
     color: var(--font-color);
+    letter-spacing: 0.03em;
+    text-align: center;
 }
 h2 {
     font-weight: 300;
     font-size: 32px;
     color: var(--font-color);
+    letter-spacing: 0.03em;
+    border-bottom: solid 1px var(--font-color);
+    margin-bottom: 45px;
 }
 a, a:visited {
     font-weight: 300;
@@ -44,6 +50,7 @@ p {
     font-weight: 300;
     font-size: 16px;
     color: var(--font-color);
+    text-align: center;
 }
 p.copy {
     font-weight: 300;
@@ -59,9 +66,16 @@ button {
     color: var(--font-color);
 }
 div.container {
-    max-width: px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 30px;
 }
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /* 狭い画面向けの既定の CSS レイアウト値 */
 
