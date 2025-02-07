@@ -10,7 +10,7 @@
     color: var(--font-color);
 }
 body {
-    font-family: "Source Sans 3", serif;
+    font-family: "Source Sans 3", Meiryo, serif;
     margin: unset;
     background-color: var(--main-bg-color);
 }
@@ -79,9 +79,36 @@ article {
     flex-direction: column;
     align-items: center;
 }
-
+/*-------------------------------------------
+main_visual
+-------------------------------------------*/
+div.main_visual {
+}
+/*-------------------------------------------
+Information
+-------------------------------------------*/
+article#Information {
+}
+/*-------------------------------------------
+Gallery
+-------------------------------------------*/
+article#Gallery {
+}
+/*-------------------------------------------
+Access
+-------------------------------------------*/
 article#Access {
     background-image: url("https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/bg.jpg?raw=true");
+}
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+article#Contact {
+}
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+article#footer {
 }
 
 
