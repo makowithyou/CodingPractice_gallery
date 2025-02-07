@@ -46,6 +46,10 @@ a, a:visited {
     color: var(--font-color);
     text-decoration: none;
 }
+a.button {
+    font-weight: 300;
+    font-size: 16px;
+}
 p {
     font-weight: 300;
     font-size: 16px;
@@ -74,6 +78,10 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+article#Access {
+    background-image: url("https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/bg.jpg?raw=true");
 }
 
 
