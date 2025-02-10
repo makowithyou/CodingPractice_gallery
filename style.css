@@ -111,6 +111,9 @@ MainVisual
 -------------------------------------------*/
 div#MainVisual {
     display: flex;
+    overflow: hidden;
+}
+div#MainVisual img {
     transform: translateX(-100%);
 }
 /*-------------------------------------------
