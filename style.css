@@ -127,7 +127,7 @@ Gallery
 -------------------------------------------*/
 article#Gallery div.images {
     display: grid;
-    row-gap: 20px;
+    row-gap: 30px;
 }
 /*-------------------------------------------
 Access
