@@ -91,6 +91,9 @@ div.container {
     padding: 0 30px;
     text-align: center;
 }
+address {
+    font-style: unset;
+}
 /*-------------------------------------------
 header
 -------------------------------------------*/
