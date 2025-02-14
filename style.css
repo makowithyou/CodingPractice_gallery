@@ -122,25 +122,24 @@ div#HamburgerButton {
     width: 30px;
     height: 23px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 header div#HamburgerButton span {
     width: 30px;
     height: 1px;
     display: inline-block;
     background-color: #ffffff;
-    position: absolute;
 }
 header div#HamburgerButton span:first-of-type {
-    top: 0;
-    /* opacity: 0; */
+    transform: translateY(0px);
 }
 header div#HamburgerButton span:nth-of-type(2) {
-    top: calc(50% - 1px);
-    /* opacity: 0; */
+    transform: translateY(9px);
 }
 header div#HamburgerButton span:nth-of-type(3) {
-    top: calc(100% - 1px);
-    /* opacity: 0; */
+    transform: translateY(18px);
 }
 header nav#HamburgerMenu {
     width: 100%;
@@ -168,32 +167,26 @@ header div#HamburgerButton span.open:nth-of-type(3) {
 }
 @keyframes span1open {
     from {
-        transform: rotate(0);
-        top: 0;
+        transform: translateY(0) rotate(0);
     }
     to {
-        transform: rotate(-45deg);
-        top: 50%;
+        transform: translateY(10px) rotate(-45deg);
     }
 }
 @keyframes span2open {
     from {
-        transform: rotate(0);
-        top: 50%;
+        transform: translateY(9px) rotate(0);
     }
     to {
-        transform: rotate(45deg);
-        top: 50%;
+        transform: translateY(9px) rotate(45deg);
     }
 }
 @keyframes span3open {
     from {
-        transform: rotate(0);
-        top: 50%;
+        transform: translateY(18px) rotate(0);
     }
     to {
-        transform: rotate(45deg);
-        top: 50%;
+        transform: translateY(8px) rotate(45deg);
     }
 }
 /* open したときここまで */
@@ -210,32 +203,26 @@ header div#HamburgerButton span.close:nth-of-type(3) {
 }
 @keyframes span1close {
     from {
-        transform: rotate(-45deg);
-        top: 50%;
+        transform: translateY(10px) rotate(-45deg);
     }
     to {
-        transform: rotate(0);
-        top: 0;
+        transform: translateY(0px) rotate(0);
     }
 }
 @keyframes span2close {
     from {
-        transform: rotate(45deg);
-        top: 50%;
+        transform: translateY(9px) rotate(45deg);
     }
     to {
-        transform: rotate(0);
-        top: calc(50% - 1px);
+        transform: translateY(9px) rotate(0);
     }
 }
 @keyframes span3close {
     from {
-        transform: rotate(45deg);
-        top: 50%;
+        transform: translateY(8px) rotate(45deg);
     }
     to {
-        transform: rotate(0);
-        top: calc(100% - 1px);
+        transform: translateY(18px) rotate(0);
     }
 }
 /* close したときここまで */
