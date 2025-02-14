@@ -131,6 +131,7 @@ header div#HamburgerButton span {
     height: 1px;
     display: inline-block;
     background-color: #ffffff;
+    transition: all 0.5s;
 }
 header div#HamburgerButton span:first-of-type {
     transform: translateY(0px);
@@ -158,80 +159,23 @@ header nav#HamburgerMenu li {
 }
 /* open したときここから */
 header div#HamburgerButton span.open:first-of-type {
-    animation: 0.5s forwards span1open;
+    transform: translateY(10px) rotate(-45deg);
+    transition: all 0.5s;
 }
 header div#HamburgerButton span.open:nth-of-type(2) {
-    animation: 0.5s forwards span2open;
+    transform: translateY(9px) rotate(45deg);
+    transition: all 0.5s;
 }
 header div#HamburgerButton span.open:nth-of-type(3) {
-    animation: 0.5s forwards span3open;
+    transform: translateY(8px) rotate(45deg);
+    transition: all 0.5s;
 }
-@keyframes span1open {
-    from {
-        transform: translateY(0) rotate(0);
-    }
-    to {
-        transform: translateY(10px) rotate(-45deg);
-    }
-}
-@keyframes span2open {
-    from {
-        transform: translateY(9px) rotate(0);
-    }
-    to {
-        transform: translateY(9px) rotate(45deg);
-    }
-}
-@keyframes span3open {
-    from {
-        transform: translateY(18px) rotate(0);
-    }
-    to {
-        transform: translateY(8px) rotate(45deg);
-    }
-}
+
 header nav#HamburgerMenu.open {
     transform: translateY(0);
     transition: all 0.5s;
 }
 /* open したときここまで */
-
-/* close したときここから */
-header div#HamburgerButton span.close:first-of-type {
-    animation: 0.5s forwards span1close;
-}
-header div#HamburgerButton span.close:nth-of-type(2) {
-    animation: 0.5s forwards span2close;
-}
-header div#HamburgerButton span.close:nth-of-type(3) {
-    animation: 0.5s forwards span3close;
-}
-@keyframes span1close {
-    from {
-        transform: translateY(10px) rotate(-45deg);
-    }
-    to {
-        transform: translateY(0px) rotate(0);
-    }
-}
-@keyframes span2close {
-    from {
-        transform: translateY(9px) rotate(45deg);
-    }
-    to {
-        transform: translateY(9px) rotate(0);
-    }
-}
-@keyframes span3close {
-    from {
-        transform: translateY(8px) rotate(45deg);
-    }
-    to {
-        transform: translateY(18px) rotate(0);
-    }
-}
-/* close したときここまで */
-
 
 
 /*-------------------------------------------
