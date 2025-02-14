@@ -151,6 +151,7 @@ header nav#HamburgerMenu {
     top: 0;
     left: 0;
     transform: translateY(-100%);
+    transition: all 0.5s;
 }
 header nav#HamburgerMenu li {
     padding-bottom: 20px;
@@ -188,6 +189,10 @@ header div#HamburgerButton span.open:nth-of-type(3) {
     to {
         transform: translateY(8px) rotate(45deg);
     }
+}
+header nav#HamburgerMenu.open {
+    transform: translateY(0);
+    transition: all 0.5s;
 }
 /* open したときここまで */
 
