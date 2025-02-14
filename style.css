@@ -116,9 +116,6 @@ header a img {
     width: 140px;
 }
 div#HamburgerButton {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
     float: right;
     z-index: 2;
     cursor: pointer;
@@ -131,6 +128,19 @@ header div#HamburgerButton span {
     height: 1px;
     display: inline-block;
     background-color: #ffffff;
+    position: absolute;
+}
+header div#HamburgerButton span:first-of-type {
+    top: 0;
+    /* opacity: 0; */
+}
+header div#HamburgerButton span:nth-of-type(2) {
+    top: calc(50% - 1px);
+    /* opacity: 0; */
+}
+header div#HamburgerButton span:nth-of-type(3) {
+    top: calc(100% - 1px);
+    /* opacity: 0; */
 }
 header nav#HamburgerMenu {
     width: 100%;
@@ -148,18 +158,15 @@ header nav#HamburgerMenu li {
 }
 /* open したときここから */
 header div#HamburgerButton span.open:first-of-type {
-    position: absolute;
-    animation: 0.5s forwards span1;
+    animation: 0.5s forwards span1open;
 }
 header div#HamburgerButton span.open:nth-of-type(2) {
-    position: absolute;
-    animation: 0.5s forwards span2;
+    animation: 0.5s forwards span2open;
 }
 header div#HamburgerButton span.open:nth-of-type(3) {
-    position: absolute;
-    animation: 0.5s forwards span3;
+    animation: 0.5s forwards span3open;
 }
-@keyframes span1 {
+@keyframes span1open {
     from {
         transform: rotate(0);
         top: 0;
@@ -169,7 +176,7 @@ header div#HamburgerButton span.open:nth-of-type(3) {
         top: 50%;
     }
 }
-@keyframes span2 {
+@keyframes span2open {
     from {
         transform: rotate(0);
         top: 50%;
@@ -179,17 +186,59 @@ header div#HamburgerButton span.open:nth-of-type(3) {
         top: 50%;
     }
 }
-@keyframes span3 {
+@keyframes span3open {
     from {
         transform: rotate(0);
-        bottom: 0;
+        top: 50%;
     }
     to {
         transform: rotate(45deg);
-        bottom: 50%;
+        top: 50%;
     }
 }
 /* open したときここまで */
+
+/* close したときここから */
+header div#HamburgerButton span.close:first-of-type {
+    animation: 0.5s forwards span1close;
+}
+header div#HamburgerButton span.close:nth-of-type(2) {
+    animation: 0.5s forwards span2close;
+}
+header div#HamburgerButton span.close:nth-of-type(3) {
+    animation: 0.5s forwards span3close;
+}
+@keyframes span1close {
+    from {
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+    to {
+        transform: rotate(0);
+        top: 0;
+    }
+}
+@keyframes span2close {
+    from {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+    to {
+        transform: rotate(0);
+        top: calc(50% - 1px);
+    }
+}
+@keyframes span3close {
+    from {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+    to {
+        transform: rotate(0);
+        top: calc(100% - 1px);
+    }
+}
+/* close したときここまで */
 
 
 
