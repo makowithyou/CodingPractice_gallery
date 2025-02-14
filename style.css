@@ -107,6 +107,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s;
+}
+header.show {
+    visibility: visible;
+    opacity: 1;
 }
 header a {
     float: left;
