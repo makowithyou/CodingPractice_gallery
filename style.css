@@ -122,6 +122,9 @@ div#HamburgerButton {
     float: right;
     z-index: 2;
     cursor: pointer;
+    width: 30px;
+    height: 23px;
+    position: relative;
 }
 header div#HamburgerButton span {
     width: 30px;
@@ -143,6 +146,51 @@ header nav#HamburgerMenu {
 header nav#HamburgerMenu li {
     padding-bottom: 20px;
 }
+/* open したときここから */
+header div#HamburgerButton span.open:first-of-type {
+    position: absolute;
+    animation: 0.5s forwards span1;
+}
+header div#HamburgerButton span.open:nth-of-type(2) {
+    position: absolute;
+    animation: 0.5s forwards span2;
+}
+header div#HamburgerButton span.open:nth-of-type(3) {
+    position: absolute;
+    animation: 0.5s forwards span3;
+}
+@keyframes span1 {
+    from {
+        transform: rotate(0);
+        top: 0;
+    }
+    to {
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+}
+@keyframes span2 {
+    from {
+        transform: rotate(0);
+        top: 50%;
+    }
+    to {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+}
+@keyframes span3 {
+    from {
+        transform: rotate(0);
+        bottom: 0;
+    }
+    to {
+        transform: rotate(45deg);
+        bottom: 50%;
+    }
+}
+/* open したときここまで */
+
 
 
 /*-------------------------------------------
