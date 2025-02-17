@@ -300,8 +300,14 @@ footer ul {
   /* 中型の画面向けの CSS */
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   /* 広い画面向けの CSS */
+h1 {
+    font-size: 100px;
+}
+h2 {
+    font-size: 60px;
+}
 }
 
 @media (min-width: 1100px) {
