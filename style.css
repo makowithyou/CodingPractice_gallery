@@ -315,9 +315,12 @@ aside {
     position: fixed;
     right: 0;
     bottom: 20%;
+    display: block;
+    transform: translateX(100%);
+    transition: all 0.5s;
 }
 aside.show {
-    display: block;
+    transform: translateX(0);
 }
 aside ul li {
     padding: 30px 15px;
