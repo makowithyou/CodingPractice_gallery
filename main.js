@@ -22,17 +22,28 @@ addEventListener(
             Title.classList.add("show");
         }
 
+        // asideの表示・非表示
+        // const GY = Gallery.getBoundingClientRect().y;
+        // const AY = Access.getBoundingClientRect().y;
+        // if (GY > WH) {
+        //     Aside.classList.remove("show"); // Galleryより上にいるときは非表示
+        // } else if (GY < WH) {
+        //     Aside.classList.add("show"); // Galleryが画面下にきたら右から左へスライド
+        // } else if (AY < WH) {
+        //     Aside.classList.remove("show"); // Accessが画面下にきたらスライドして非表示
+        // }
+
         // Galleryが画面下にきたら右から左へスライド
         const GY = Gallery.getBoundingClientRect().y;
         if (GY < WH) {
             Aside.classList.add("show");
         }
-
         // Accessが画面下にきたらスライドして非表示
         const AY = Access.getBoundingClientRect().y;
         if (AY < WH) {
             Aside.classList.remove("show");
         }
+
     }
 )
 
