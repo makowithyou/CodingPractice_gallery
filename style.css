@@ -329,6 +329,7 @@ aside ul li {
 aside button {
     font-size: 14px;
     letter-spacing: 0.1em;
+    background-color: unset;
     writing-mode: sideways-lr;
 }
 /*-------------------------------------------
