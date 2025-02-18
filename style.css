@@ -314,8 +314,14 @@ aside
 aside {
     position: fixed;
     right: 0;
-    bottom: 200px;
+    bottom: 20%;
+}
+aside.show {
     display: block;
+}
+aside ul li {
+    padding: 30px 15px;
+    border: 1px solid var(--font-color);
 }
 aside button {
     font-size: 14px;
