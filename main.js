@@ -3,9 +3,10 @@ const Header = document.getElementById("Header");
 const Aside = document.getElementById("Aside");
 // const MainVisual = document.getElementById("MainVisual");
 const Title = document.getElementById("Title");
-const Gallery = document.getElementById("Gallery");
-const Access = document.getElementById("Access");
+const GalleryTitle = document.getElementById("GalleryTitle");
+const AccessTitle = document.getElementById("AccessTitle");
 const WH = window.innerHeight;
+
 addEventListener(
     "scroll", () => {
 
@@ -23,27 +24,17 @@ addEventListener(
         }
 
         // asideの表示・非表示
-        // const GY = Gallery.getBoundingClientRect().y;
-        // const AY = Access.getBoundingClientRect().y;
-        // if (GY > WH) {
-        //     Aside.classList.remove("show"); // Galleryより上にいるときは非表示
-        // } else if (GY < WH) {
-        //     Aside.classList.add("show"); // Galleryが画面下にきたら右から左へスライド
-        // } else if (AY < WH) {
-        //     Aside.classList.remove("show"); // Accessが画面下にきたらスライドして非表示
-        // }
-
-        // Galleryが画面下にきたら右から左へスライド
-        const GY = Gallery.getBoundingClientRect().y;
+        const GY = GalleryTitle.getBoundingClientRect().y;
+        const AY = AccessTitle.getBoundingClientRect().y;
+        if (GY > WH) {
+            Aside.classList.remove("show"); // Galleryより上にいるときは非表示
+        }
         if (GY < WH) {
-            Aside.classList.add("show");
+            Aside.classList.add("show"); // Galleryが画面下にきたら右から左へスライド
         }
-        // Accessが画面下にきたらスライドして非表示
-        const AY = Access.getBoundingClientRect().y;
         if (AY < WH) {
-            Aside.classList.remove("show");
+            Aside.classList.remove("show"); // Accessが画面下にきたらスライドして非表示
         }
-
     }
 )
 
