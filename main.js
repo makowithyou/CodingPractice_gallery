@@ -1,7 +1,10 @@
 // スクロールイベント
 const Header = document.getElementById("Header");
-const MainVisual = document.getElementById("MainVisual");
+const Aside = document.getElementById("Aside");
+// const MainVisual = document.getElementById("MainVisual");
 const Title = document.getElementById("Title");
+const Gallery = document.getElementById("Gallery");
+const Access = document.getElementById("Access");
 const WH = window.innerHeight;
 addEventListener(
     "scroll", () => {
@@ -17,6 +20,18 @@ addEventListener(
         const TY = Title.getBoundingClientRect().y;
         if (TY < WH) {
             Title.classList.add("show");
+        }
+
+        // Galleryが画面下にきたら右から左へスライド
+        const GY = Gallery.getBoundingClientRect().y;
+        if (GY < WH) {
+            Aside.classList.add("show");
+        }
+
+        // Accessが画面下にきたらスライドして非表示
+        const AY = Access.getBoundingClientRect().y;
+        if (AY < WH) {
+            Aside.classList.remove("show");
         }
     }
 )
