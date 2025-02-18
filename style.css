@@ -308,6 +308,70 @@ h1 {
 h2 {
     font-size: 60px;
 }
+/*-------------------------------------------
+Title
+-------------------------------------------*/
+div#Title h1 {
+    margin: 100px 0;
+}
+/*-------------------------------------------
+Information
+-------------------------------------------*/
+article#Information p {
+    font-size: 18px;
+}
+article#Information p.place {
+    font-size: 40px;
+}
+article#Information p:nth-of-type(1) time:nth-of-type(1) {
+    font-size: 24px;
+}
+article#Information p:nth-of-type(1) time:nth-of-type(2) {
+    font-size: 24px;
+}
+article#Information {
+    margin-bottom: 140px;
+}
+/*-------------------------------------------
+Gallery
+-------------------------------------------*/
+article#Gallery div.images {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 30px;
+}
+article#Gallery div.images img:nth-of-type(odd) {
+    grid-column-start: 1;
+}
+article#Gallery div.images img:nth-of-type(even) {
+    grid-column-start: 2;
+}
+article#Gallery div.images img:nth-of-type(2) {
+    grid-row-start: 2;
+}
+article#Gallery div.images img:nth-of-type(3) {
+    grid-row-start: 3;
+}
+article#Gallery div.images img:nth-of-type(4) {
+    grid-row-start: 4;
+}
+article#Gallery div.images img:nth-of-type(5) {
+    grid-row-start: 5;
+}
+article#Gallery div.images img:nth-of-type(6) {
+    grid-row-start: 6;
+}
+/*-------------------------------------------
+Access
+-------------------------------------------*/
+article#Access {
+    padding: 480px 0;
+}
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+article#Contact a.button {
+    width: 400px;
+}
 }
 
 @media (min-width: 1100px) {
