@@ -309,6 +309,20 @@ h2 {
     font-size: 60px;
 }
 /*-------------------------------------------
+aside
+-------------------------------------------*/
+aside {
+    position: fixed;
+    right: 0;
+    bottom: 200px;
+    display: block;
+}
+aside button {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    writing-mode: sideways-lr;
+}
+/*-------------------------------------------
 Title
 -------------------------------------------*/
 div#Title h1 {
