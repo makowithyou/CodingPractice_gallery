@@ -1,16 +1,23 @@
-// スクロールイベント
 const Header = document.getElementById("Header");
 const Aside = document.getElementById("Aside");
 // const MainVisual = document.getElementById("MainVisual");
-const Title = document.getElementById("Title");
+const MainTitle = document.getElementById("MainTitle");
+const Information = document.getElementById("Information");
+const InformationTitle = document.getElementById("InformationTitle");
 const GalleryTitle = document.getElementById("GalleryTitle");
 const Access = document.getElementById("Access");
 const AccessTitle = document.getElementById("AccessTitle");
 const ContactTitle = document.getElementById("ContactTitle");
 const WH = window.innerHeight;
 
+// スクロールイベント
 addEventListener(
     "scroll", () => {
+        const MTY = MainTitle.getBoundingClientRect().y;
+        const IY = InformationTitle.getBoundingClientRect().y;
+        const GY = GalleryTitle.getBoundingClientRect().y;
+        const AY = AccessTitle.getBoundingClientRect().y;
+        const CT = ContactTitle.getBoundingClientRect().y;
 
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
@@ -19,15 +26,20 @@ addEventListener(
             Header.classList.remove("show");
         }
 
-        // Titleが画面下にきたら下からふわっと表示
-        const TY = Title.getBoundingClientRect().y;
-        if (TY < WH) {
-            Title.classList.add("show");
+        // MainTitleが画面下にきたら下からふわっと表示
+        if (MTY < WH) {
+            MainTitle.classList.add("show");
+        }
+        // InformationTitleが画面下にきたら下からふわっと表示
+        if (IY < WH) {
+            Information.classList.add("show");
+        }
+        // GalleryTitleが画面下にきたら下からふわっと表示
+        if (GY < WH) {
+            GalleryTitle.classList.add("show");
         }
 
         // asideの表示・非表示
-        const GY = GalleryTitle.getBoundingClientRect().y;
-        const AY = AccessTitle.getBoundingClientRect().y;
         if (GY > WH) {
             Aside.classList.remove("show"); // Galleryタイトルより上にいるときは非表示
         }
@@ -39,7 +51,6 @@ addEventListener(
         }
 
         // ACCESSの背景画像
-        const CT = ContactTitle.getBoundingClientRect().y;
         if (AY > WH) {
             Access.classList.remove("show"); // Accessタイトルより上にいるときは非表示
         }
