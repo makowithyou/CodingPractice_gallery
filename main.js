@@ -4,7 +4,9 @@ const Aside = document.getElementById("Aside");
 // const MainVisual = document.getElementById("MainVisual");
 const Title = document.getElementById("Title");
 const GalleryTitle = document.getElementById("GalleryTitle");
+const Access = document.getElementById("Access");
 const AccessTitle = document.getElementById("AccessTitle");
+const ContactTitle = document.getElementById("ContactTitle");
 const WH = window.innerHeight;
 
 addEventListener(
@@ -27,13 +29,25 @@ addEventListener(
         const GY = GalleryTitle.getBoundingClientRect().y;
         const AY = AccessTitle.getBoundingClientRect().y;
         if (GY > WH) {
-            Aside.classList.remove("show"); // Galleryより上にいるときは非表示
+            Aside.classList.remove("show"); // Galleryタイトルより上にいるときは非表示
         }
         if (GY < WH) {
-            Aside.classList.add("show"); // Galleryが画面下にきたら右から左へスライド
+            Aside.classList.add("show"); // Galleryタイトルが画面下にきたら右から左へスライド
         }
         if (AY < WH) {
-            Aside.classList.remove("show"); // Accessが画面下にきたらスライドして非表示
+            Aside.classList.remove("show"); // Accessタイトルが画面下にきたらスライドして非表示
+        }
+
+        // ACCESSの背景画像
+        const CT = ContactTitle.getBoundingClientRect().y;
+        if (AY > WH) {
+            Access.classList.remove("show"); // Accessタイトルより上にいるときは非表示
+        }
+        if (AY < WH) {
+            Access.classList.add("show"); // Accessが画面下にきたら表示
+        }
+        if (CT < WH) {
+            Access.classList.remove("show"); // Contactタイトルが画面下にきたら非表示
         }
     }
 )
