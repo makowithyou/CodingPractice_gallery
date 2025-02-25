@@ -5,6 +5,7 @@ const MainTitle = document.getElementById("MainTitle");
 const Information = document.getElementById("Information");
 const InformationTitle = document.getElementById("InformationTitle");
 const GalleryTitle = document.getElementById("GalleryTitle");
+const GalleryImages = document.getElementsByClassName("GalleryImages");
 const Access = document.getElementById("Access");
 const AccessTitle = document.getElementById("AccessTitle");
 const ContactTitle = document.getElementById("ContactTitle");
@@ -48,6 +49,14 @@ addEventListener(
         }
         if (AY < WH) {
             Aside.classList.remove("show"); // Accessタイトルが画面下にきたらスライドして非表示
+        }
+
+        // Galleryの画像の表示
+        for (images of GalleryImages) {
+            const GIY = images.getBoundingClientRect().y
+            if (GIY < WH) {
+                images.classList.add("show");
+            }
         }
 
         // ACCESSの背景画像
