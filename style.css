@@ -98,7 +98,7 @@ address {
 @keyframes fadein {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(100px);
     }
     to {
         opacity: 1;
@@ -207,6 +207,7 @@ aside {
 MainVisual
 -------------------------------------------*/
 div#MainVisual {
+    min-height: 100vh;
     display: flex;
     overflow: hidden;
 }
@@ -252,7 +253,13 @@ article#Gallery div.images {
     display: grid;
     row-gap: 30px;
 }
-
+article#Gallery div.images img {
+    opacity: 0;
+}
+article#Gallery div.images img.show {
+    opacity: 0;
+    animation: fadein 2s 0.25s forwards;
+}
 
 /*-------------------------------------------
 Access
