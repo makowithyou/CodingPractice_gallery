@@ -112,7 +112,6 @@ header
 header {
     padding: 20px 30px;
     position: fixed;
-    z-index: 1;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -120,6 +119,7 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: 1s;
+    z-index: 1000;
 }
 header.show {
     visibility: visible;
@@ -269,10 +269,11 @@ article#Access {
     padding: 280px 0;
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 article#Access::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
