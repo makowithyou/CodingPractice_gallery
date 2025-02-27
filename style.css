@@ -305,6 +305,10 @@ article#Contact a.button {
     width: 100%;
     margin-bottom: 20px;
     border-color: #7D7D7D;
+    transition: 0.5s;
+}
+article#Contact a.button:hover {
+    opacity: 0.7;
 }
 
 
@@ -325,6 +329,9 @@ footer ul {
 }
 
 
+/*-------------------------------------------
+ここから大きい画面用
+-------------------------------------------*/
 @media (min-width: 900px) {
 
 h1 {
@@ -439,16 +446,30 @@ article#Contact a.button {
     width: 400px;
     position: relative;
 }
-article#Contact a.button::after {
-    content: "";
+article#Contact a.button span {
+    transition: 0.5s;
     position: absolute;
-    top: 47px;
+}
+article#Contact a.button span:first-of-type {
+    top: 48px;
     left: 360px;
     width: 120px;
-    height: 10px;
-    border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
-    transform: skew(45deg);
+}
+article#Contact a.button span:last-of-type {
+    top: 38px;
+    left: 471px;
+    height: 11px;
+    border-right: 2px solid #ffffff;
+    transform: skew(60deg);
+}
+article#Contact a.button:hover span:first-of-type {
+    opacity: 0.7;
+    transform: translateX(10px);
+}
+article#Contact a.button:hover span:last-of-type {
+    opacity: 0.7;
+    transform: skew(60deg) translateX(10px);
 }
 
 
