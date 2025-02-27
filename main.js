@@ -11,6 +11,7 @@ const Access = document.getElementById("Access");
 const AccessTitle = document.getElementById("AccessTitle");
 const ContactTitle = document.getElementById("ContactTitle");
 const WH = window.innerHeight;
+const WW = window.innerWidth;
 
 // スクロールイベント
 addEventListener(
@@ -23,13 +24,14 @@ addEventListener(
         const CT = ContactTitle.getBoundingClientRect().y;
 
         // メインビジュアルの画像
-        const img1 = MainVisualImages[0];
-        const img3 = MainVisualImages[2];
-        const num = (100 + MVY / 10).toString();
-        const percentage = `-${num}%`;
-        img1.style.left = percentage;
-        img3.style.right = percentage;
-
+        if (WW < 900) {
+            const img1 = MainVisualImages[0];
+            const img3 = MainVisualImages[2];
+            const num = (100 + MVY / 10).toString();
+            const percentage = `-${num}%`;
+            img1.style.left = percentage;
+            img3.style.right = percentage;
+        }
 
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
