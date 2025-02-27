@@ -32,6 +32,7 @@ addEventListener(
             img1.style.left = percentage;
             img3.style.right = percentage;
         }
+        // width: calc((100% / 3) + 50px);
 
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
