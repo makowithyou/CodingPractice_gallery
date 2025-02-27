@@ -217,6 +217,8 @@ div#MainVisual img:first-of-type {
 }
 div#MainVisual img {
     position: absolute;
+    height: 100vh;
+    object-fit: cover;
 }
 div#MainVisual img:last-of-type {
     z-index: 2;
@@ -374,6 +376,21 @@ aside button {
     background-color: unset;
     writing-mode: sideways-lr;
 }
+
+
+/*-------------------------------------------
+MainTitle
+-------------------------------------------*/
+div#MainVisual {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+div#MainVisual img:first-of-type {}
+div#MainVisual img {
+    /* position: unset; */
+    width: calc(100% / 3);
+}
+div#MainVisual img:first-of-type {}
 
 
 /*-------------------------------------------
