@@ -208,11 +208,19 @@ MainVisual
 -------------------------------------------*/
 div#MainVisual {
     min-height: 100vh;
-    display: flex;
     overflow: hidden;
+    position: relative;
+}
+div#MainVisual img:first-of-type {
+    z-index: 2;
+    left: -100%;
 }
 div#MainVisual img {
-    transform: translateX(-100%);
+    position: absolute;
+}
+div#MainVisual img:last-of-type {
+    z-index: 2;
+    right: -100%;
 }
 
 
