@@ -1,6 +1,7 @@
 const Header = document.getElementById("Header");
 const Aside = document.getElementById("Aside");
-// const MainVisual = document.getElementById("MainVisual");
+const MainVisual = document.getElementById("MainVisual");
+const MainVisualImages = document.getElementsByClassName("MainVisualImages");
 const MainTitle = document.getElementById("MainTitle");
 const Information = document.getElementById("Information");
 const InformationTitle = document.getElementById("InformationTitle");
@@ -14,11 +15,19 @@ const WH = window.innerHeight;
 // スクロールイベント
 addEventListener(
     "scroll", () => {
+        const MVY = MainVisual.getBoundingClientRect().y;
         const MTY = MainTitle.getBoundingClientRect().y;
         const IY = InformationTitle.getBoundingClientRect().y;
         const GY = GalleryTitle.getBoundingClientRect().y;
         const AY = AccessTitle.getBoundingClientRect().y;
         const CT = ContactTitle.getBoundingClientRect().y;
+
+        // メインビジュアルの画像
+        // const img1 = MainVisualImages[0]
+        // let left = MVY;
+        // left = left.toString();
+        // img1.style.left = `calc(-100% - (left))`;
+
 
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
