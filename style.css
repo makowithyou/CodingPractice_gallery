@@ -379,18 +379,22 @@ aside button {
 
 
 /*-------------------------------------------
-MainTitle
+MainVisual
 -------------------------------------------*/
 div#MainVisual {
-    /* display: grid; */
-    grid-template-columns: 1fr 1fr 1fr;
 }
-div#MainVisual img:first-of-type {}
 div#MainVisual img {
-    /* position: unset; */
     width: calc(100% / 3);
 }
-div#MainVisual img:first-of-type {}
+div#MainVisual img:first-of-type {
+    left: 0;
+}
+div#MainVisual img:nth-of-type(2) {
+    left: calc(100% / 3);
+}
+div#MainVisual img:last-of-type {
+    right: 0;
+}
 
 
 /*-------------------------------------------
