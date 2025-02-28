@@ -233,8 +233,10 @@ div#MainTitle h1 {
     margin: 50px 0;
     text-align: center;
 }
-div#MainTitle.show {
+div#MainTitle {
     opacity: 0;
+}
+div#MainTitle.show {
     animation: fadein 2s 0.25s forwards;
 }
 
@@ -245,9 +247,9 @@ Information
 article#Information {
     margin-bottom: 80px;
     text-align: center;
+    opacity: 0;
 }
 article#Information.show {
-    opacity: 0;
     animation: fadein 2s 0.25s forwards;
 }
 
@@ -255,8 +257,10 @@ article#Information.show {
 /*-------------------------------------------
 Gallery
 -------------------------------------------*/
-article#Gallery h2#GalleryTitle.show {
+article#Gallery h2#GalleryTitle {
     opacity: 0;
+}
+article#Gallery h2#GalleryTitle.show {
     animation: fadein 2s 0.25s forwards;
 }
 article#Gallery div.images {
@@ -267,7 +271,6 @@ article#Gallery div.images img {
     opacity: 0;
 }
 article#Gallery div.images img.show {
-    opacity: 0;
     animation: fadein 2s 0.25s forwards;
 }
 
