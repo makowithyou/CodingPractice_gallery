@@ -30,7 +30,6 @@ addEventListener(
         const img2 = MainVisualImages[1];
         const img3 = MainVisualImages[2];
         if (WW < 900) {
-            console.log(MVY)
             const num = 100 + MVY / 10; // スクロール距離の数値を画像縮小の数値とする
 
             img1.style.left = `-${num}%`;
