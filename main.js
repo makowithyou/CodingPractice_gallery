@@ -2,6 +2,8 @@ const Header = document.getElementById("Header");
 const Aside = document.getElementById("Aside");
 const MainVisual = document.getElementById("MainVisual");
 const MainVisualImages = document.getElementsByClassName("MainVisualImages");
+const MainVisualImagesStyle = window.getComputedStyle(MainVisualImages[0]);
+const MainVisualImageOriginalWidth = parseInt(MainVisualImagesStyle.getPropertyValue("width"));
 const MainTitle = document.getElementById("MainTitle");
 const Information = document.getElementById("Information");
 const InformationTitle = document.getElementById("InformationTitle");
@@ -24,15 +26,33 @@ addEventListener(
         const CT = ContactTitle.getBoundingClientRect().y;
 
         // メインビジュアルの画像
+        const img1 = MainVisualImages[0];
+        const img2 = MainVisualImages[1];
+        const img3 = MainVisualImages[2];
         if (WW < 900) {
-            const img1 = MainVisualImages[0];
-            const img3 = MainVisualImages[2];
-            const num = (100 + MVY / 10).toString();
-            const percentage = `-${num}%`;
-            img1.style.left = percentage;
-            img3.style.right = percentage;
+            console.log(MVY)
+            const num = 100 + MVY / 10; // スクロール距離の数値を画像縮小の数値とする
+
+            img1.style.left = `-${num}%`;
+            img3.style.right = `-${num}%`;
+        } else {
+            const num = -( MVY / 2); // スクロール距離の半分の数値を画像拡大の数値とする
+
+            const width = MainVisualImageOriginalWidth + num;
+            const img1_left = num * 1.5;
+            const img2_left = MainVisualImageOriginalWidth - num / 2;
+            const img3_right = num * 1.5;
+
+            img1.style.width = `${width}px`;
+            img1.style.left = `-${img1_left}px`;
+
+            img2.style.width = `${width}px`;
+            img2.style.left = `${img2_left}px`;
+
+            img3.style.width = `${width}px`;
+            img3.style.right = `-${img3_right}px`;
         }
-        // width: calc((100% / 3) + 50px);
+
 
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
