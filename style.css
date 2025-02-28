@@ -207,6 +207,7 @@ aside {
 MainVisual
 -------------------------------------------*/
 div#MainVisual {
+    width: 100%;
     min-height: 100vh;
     overflow: hidden;
     position: relative;
