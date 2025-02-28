@@ -190,7 +190,7 @@ header div#HamburgerButton span.open:nth-of-type(3) {
 
 header nav#HamburgerMenu.open {
     transform: translateY(0);
-    transition: 0.5s;
+    transition: 1s;
 }
 /* open したときここまで */
 
@@ -302,6 +302,12 @@ article#Access.show::before {
 article#Access address {
     margin-bottom: 30px;
 }
+article#Access a.button {
+    transition: 0.5s;
+}
+article#Access a.button:hover {
+    background-color: var(--main-bg-color);
+}
 
 
 /*-------------------------------------------
@@ -362,19 +368,23 @@ aside {
     display: block;
     transform: translateX(100%);
     transition: 0.5s;
+    z-index: 2;
 }
 aside.show {
     transform: translateX(0);
 }
 aside ul li {
-    padding: 30px 15px;
     border: 1px solid var(--font-color);
 }
 aside button {
     font-size: 14px;
     letter-spacing: 0.1em;
+    padding: 30px 15px;
     background-color: unset;
     writing-mode: sideways-lr;
+}
+aside ul li button:hover {
+    opacity: 0.7;
 }
 
 
