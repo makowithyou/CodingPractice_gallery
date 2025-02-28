@@ -56,6 +56,7 @@ addEventListener(
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
             Header.classList.add("show");
+            console.log("window.scrollY > 520");
         } else {
             Header.classList.remove("show");
         }
