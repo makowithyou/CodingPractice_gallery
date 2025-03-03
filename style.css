@@ -1,135 +1,534 @@
-<!DOCTYPE html>
-    <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://raw.githubusercontent.com/makowithyou/CodingPractice_gallery/refs/heads/main/images/favicon.ico">
-    <!-- Source Sans 3 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <title>FA EXHIBITION</title>
-</head>
+/*-------------------------------------------
+共通 css
+-------------------------------------------*/
+:root {
+    --main-bg-color: #050507;
+    --font-color: #ffffff;
+}
+* {
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+body {
+    font-family: "Source Sans 3",
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    sans-serif;
+    margin: unset;
+    background-color: var(--main-bg-color);
+}
+img {
+    display: block;
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+h1, h2, p, menu, button, ul {
+    margin: unset;
+    padding: unset;
+}
+h1 {
+    font-weight: 300;
+    font-size: 48px;
+    color: var(--font-color);
+    letter-spacing: 0.03em;
+}
+h2 {
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--font-color);
+    letter-spacing: 0.03em;
+    border-bottom: solid 1px var(--font-color);
+    margin-bottom: 45px;
+    display: inline-block;
+}
+a, a:visited {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--font-color);
+    text-decoration: none;
+}
+a.button {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 15px 0;
+    width: 252px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+}
+p {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--font-color);
+    margin-bottom: 20px;
+}
+p.place {
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--font-color);
+}
+p.copy {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--font-color);
+    display: flex;
+    column-gap: 30px;
+}
+footer p {
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--font-color);
+}
+button {
+    background-color: var(--main-bg-color);
+    border: unset;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--font-color);
+}
+div.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+}
+address {
+    font-style: unset;
+}
+/* 要素が画面下にきたら下からふわっと表示 */
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-<body>
-    <header id="Header">
-        <a href="https://makowithyou.github.io/CodingPractice_gallery/">
-            <img src="https://raw.githubusercontent.com/makowithyou/CodingPractice_gallery/c835c0d073d8f714d405263c8e88f027d30018a2/images/logo.svg" alt="FA EXHIBITION">
-        </a>
-        <div id="HamburgerButton">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav id="HamburgerMenu">
-            <menu>
-                <li><button type="button" data-scroll-by="Top">TOP</button></li>
-                <li><button type="button" data-scroll-by="Information">INFORMATION</button></li>
-                <li><button type="button" data-scroll-by="Gallery">GALLERY</button></li>
-                <li><button type="button" data-scroll-by="Access">ACCESS</button></li>
-                <li><button type="button" data-scroll-by="Contact">CONTACT</button></li>
-            </menu>
-        </nav>
-    </header>
-    <aside id="Aside">
-        <ul>
-            <li><button type="button">FOR EXHIBITOR</button></li>
-            <li><button type="button">FOR VISITOR</button></li>
-        </ul>
-    </aside>
-    <main>
-        <div id="MainVisual">
-            <img class="MainVisualImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/mainvisual1.jpg?raw=true" alt="メインビジュアルの画像1">
-            <img class="MainVisualImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/mainvisual2.jpg?raw=true" alt="メインビジュアルの画像1">
-            <img class="MainVisualImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/mainvisual3.jpg?raw=true" alt="メインビジュアルの画像1">
-        </div>
-        <div id="MainTitle">
-            <h1>Hello Flower!<br>FA EXHIBITION 2021</h1>
-        </div>
-        <article id="Information">
-            <h2 id="InformationTitle">INFORMATION</h2>
-            <p>
-                <time datetime="2021-07-01">2021 JUL 1(THU)</time>
-                -
-                <time datetime="2021-07-03">3(SAT)</time><br>
-                DAY1 
-                <time datetime="2021-07-01T10:00+09:00">10am</time>
-                -
-                <time datetime="2021-07-01T18:00+09:00">6pm</time>
-                OTHER 
-                <time datetime="10:00">10am</time>
-                -
-                <time datetime="15:30">5:30pm</time>
-            </p>
-            <p class="place">at PARK SIDE HALL</p>
-            <p>
-                <time datetime="2021-07-01">2021年7月1日(木)</time>
-                -
-                <time datetime="2021-07-03">3日(土)</time><br>
-                Day1 
-                <time datetime="2021-07-01T10:00+09:00">10時</time>
-                〜
-                <time datetime="2021-07-01T18:00+09:00">18時</time>
-                その他 
-                <time datetime="10:00">10時</time>
-                -
-                <time datetime="15:30">17時30分</time>
-            </p>
-        </article>
-        <article id="Gallery">
-            <div class="container">
-                <h2 id="GalleryTitle">GALLERY</h2>
-                <div class="images">
-                    <img class="GalleryImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/flower1.jpg?raw=true" alt="花の画像1">
-                    <img class="GalleryImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/flower2.jpg?raw=true" alt="花の画像2">
-                    <img class="GalleryImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/flower3.jpg?raw=true" alt="花の画像3">
-                    <img class="GalleryImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/flower4.jpg?raw=true" alt="花の画像4">
-                    <img class="GalleryImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/flower5.jpg?raw=true" alt="花の画像5">
-                    <img class="GalleryImages" src="https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/flower6.jpg?raw=true" alt="花の画像6">
-                </div>
-            </div>
-        </article>
-        <article id="Access">
-            <h2 id="AccessTitle">ACCESS</h2>
-            <address>
-                <p class="place">PARK SIDE HALL</p>
-                <p>
-                    〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL<br>
-                    PARK SIDE HALL, 1-1-1 Jiyugaoka, Meguro-ku, Tokyo
-                </p>
-                <p>
-                    Tel: 03-1111-1111<br>
-                    E-mail: info@xxxxxxx.jp
-                </p>
-            </address>
-            <a class="button" href="https://makowithyou.github.io/CodingPractice_gallery/">GOOGLE MAP</a>
-        </article>
-        <article id="Contact">
-            <div class="container">
-                <h2 id="ContactTitle">CONTACT</h2>
-                <a class="button" href="https://makowithyou.github.io/CodingPractice_gallery/">出展に関するお問い合わせ<span></span><span></span></a>
-                <a class="button" href="https://makowithyou.github.io/CodingPractice_gallery/">その他のお問い合わせ<span></span><span></span></a>
-            </div>
-        </article>
-    </main>
-    <footer>
-        <address>
-            <p>FA EXHIBITION</p>
-            <p>
-                〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL
-            </p>
-            <p>Tel: 03-1111-1111</p>
-            <p>E-mail: info@xxxxxxx.jp</p>
-        </address>
-        <ul>
-            <li><a href="https://makowithyou.github.io/CodingPractice_gallery/">Twitter</a></li>
-            <li><a href="https://makowithyou.github.io/CodingPractice_gallery/">Facebook</a></li>
-            <li><a href="https://makowithyou.github.io/CodingPractice_gallery/">Instagram</a></li>
-        </ul>
-        <p class="copy"><span>PRIVACY POLICY</span>&copy; FA EXHIBITION</p>
-    </footer>
-</body>
+/*-------------------------------------------
+header
+-------------------------------------------*/
+header {
+    padding: 20px 30px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+    z-index: 1000;
+}
+header.show {
+    visibility: visible;
+    opacity: 1;
+}
+header a {
+    float: left;
+    z-index: 2;
+}
+header a img {
+    width: 140px;
+}
+div#HamburgerButton {
+    float: right;
+    z-index: 2;
+    cursor: pointer;
+    width: 30px;
+    height: 23px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header div#HamburgerButton span {
+    width: 30px;
+    height: 1px;
+    display: inline-block;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+header div#HamburgerButton span:first-of-type {
+    transform: translateY(0px);
+}
+header div#HamburgerButton span:nth-of-type(2) {
+    transform: translateY(9px);
+}
+header div#HamburgerButton span:nth-of-type(3) {
+    transform: translateY(18px);
+}
+header nav#HamburgerMenu {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 90px;
+    background-color: var(--main-bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+header nav#HamburgerMenu li {
+    padding-bottom: 20px;
+}
+/* open したときここから */
+header div#HamburgerButton span.open:first-of-type {
+    transform: translateY(10px) rotate(-45deg);
+    transition: 0.5s;
+}
+header div#HamburgerButton span.open:nth-of-type(2) {
+    transform: translateY(9px) rotate(45deg);
+    transition: 0.5s;
+}
+header div#HamburgerButton span.open:nth-of-type(3) {
+    transform: translateY(8px) rotate(45deg);
+    transition: 0.5s;
+}
 
-</html>
+header nav#HamburgerMenu.open {
+    transform: translateY(0);
+    transition: 1s;
+}
+/* open したときここまで */
+
+
+/*-------------------------------------------
+aside
+-------------------------------------------*/
+aside {
+    display: none;
+}
+
+
+/*-------------------------------------------
+MainVisual
+-------------------------------------------*/
+div#MainVisual {
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+div#MainVisual img:first-of-type {
+    z-index: 2;
+    left: -100%;
+}
+div#MainVisual img {
+    position: absolute;
+    height: 100vh;
+    object-fit: cover;
+}
+div#MainVisual img:last-of-type {
+    z-index: 2;
+    right: -100%;
+}
+
+
+/*-------------------------------------------
+MainTitle
+-------------------------------------------*/
+div#MainTitle h1 {
+    margin: 50px 0;
+    text-align: center;
+}
+div#MainTitle {
+    opacity: 0;
+}
+div#MainTitle.show {
+    animation: fadein 2s 0.25s forwards;
+}
+
+
+/*-------------------------------------------
+Information
+-------------------------------------------*/
+article#Information {
+    margin-bottom: 80px;
+    text-align: center;
+    opacity: 0;
+}
+article#Information.show {
+    animation: fadein 2s 0.25s forwards;
+}
+
+
+/*-------------------------------------------
+Gallery
+-------------------------------------------*/
+article#Gallery {
+    margin-bottom: 280px;
+}
+article#Gallery h2#GalleryTitle {
+    opacity: 0;
+}
+article#Gallery h2#GalleryTitle.show {
+    animation: fadein 2s 0.25s forwards;
+}
+article#Gallery div.images {
+    display: grid;
+    row-gap: 30px;
+}
+article#Gallery div.images img {
+    opacity: 0;
+}
+article#Gallery div.images img.show {
+    animation: fadein 2s 0.25s forwards;
+}
+
+/*-------------------------------------------
+Access
+-------------------------------------------*/
+article#Access {
+    background-position: center;
+    padding-bottom: 280px;
+    text-align: center;
+}
+article#Access.show {
+    position: relative;
+    z-index: 1;
+}
+article#Access::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://github.com/makowithyou/CodingPractice_gallery/blob/main/images/bg.jpg?raw=true);
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
+}
+article#Access.show::before {
+    opacity: 1;
+}
+article#Access address {
+    margin-bottom: 30px;
+}
+article#Access a.button {
+    transition: 0.5s;
+}
+article#Access a.button:hover {
+    background-color: var(--main-bg-color);
+}
+
+
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+article#Contact {
+    margin-bottom: 200px;
+}
+article#Contact a.button {
+    padding: 30px 0;
+    width: 100%;
+    margin-bottom: 20px;
+    border-color: #7D7D7D;
+    transition: 0.5s;
+}
+article#Contact a.button:hover {
+    opacity: 0.7;
+}
+
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+footer {
+    border-top: 1px solid #ffffff;
+    padding: 60px 30px;
+}
+footer p {
+    margin-bottom: 0;
+}
+footer ul {
+    display: flex;
+    column-gap: 15px;
+    margin: 30px 0;
+}
+
+
+/*-------------------------------------------
+ここから大きい画面用
+-------------------------------------------*/
+@media (min-width: 900px) {
+
+h1 {
+    font-size: 100px;
+}
+h2 {
+    font-size: 60px;
+}
+
+
+/*-------------------------------------------
+aside
+-------------------------------------------*/
+aside {
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+    display: block;
+    transform: translateX(100%);
+    transition: 0.5s;
+    z-index: 2;
+}
+aside.show {
+    transform: translateX(0);
+}
+aside ul li {
+    border: 1px solid var(--font-color);
+}
+aside button {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 30px 15px;
+    background-color: unset;
+    writing-mode: sideways-lr;
+}
+aside ul li button:hover {
+    opacity: 0.7;
+}
+
+
+/*-------------------------------------------
+MainVisual
+-------------------------------------------*/
+div#MainVisual {
+}
+div#MainVisual img {
+    width: calc(100% / 3);
+}
+div#MainVisual img:first-of-type {
+    left: 0;
+}
+div#MainVisual img:nth-of-type(2) {
+    left: calc(100% / 3);
+}
+div#MainVisual img:last-of-type {
+    right: 0;
+}
+
+
+/*-------------------------------------------
+MainTitle
+-------------------------------------------*/
+div#MainTitle h1 {
+    margin: 100px 0;
+}
+
+
+/*-------------------------------------------
+Information
+-------------------------------------------*/
+article#Information p {
+    font-size: 18px;
+}
+article#Information p.place {
+    font-size: 40px;
+}
+article#Information p:nth-of-type(1) time:nth-of-type(1) {
+    font-size: 24px;
+}
+article#Information p:nth-of-type(1) time:nth-of-type(2) {
+    font-size: 24px;
+}
+article#Information {
+    margin-bottom: 140px;
+}
+
+
+/*-------------------------------------------
+Gallery
+-------------------------------------------*/
+article#Gallery div.images {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 30px;
+}
+article#Gallery div.images img:nth-of-type(odd) {
+    grid-column-start: 1;
+}
+article#Gallery div.images img:nth-of-type(even) {
+    grid-column-start: 2;
+}
+article#Gallery div.images img:nth-of-type(2) {
+    grid-row-start: 2;
+}
+article#Gallery div.images img:nth-of-type(3) {
+    grid-row-start: 3;
+}
+article#Gallery div.images img:nth-of-type(4) {
+    grid-row-start: 4;
+}
+article#Gallery div.images img:nth-of-type(5) {
+    grid-row-start: 5;
+}
+article#Gallery div.images img:nth-of-type(6) {
+    grid-row-start: 6;
+}
+
+
+/*-------------------------------------------
+Access
+-------------------------------------------*/
+article#Access {
+    padding: 480px 0;
+}
+
+
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+article#Contact div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article#Contact a.button {
+    width: 400px;
+    position: relative;
+}
+article#Contact a.button span {
+    transition: 0.5s;
+    position: absolute;
+}
+article#Contact a.button span:first-of-type {
+    top: 48px;
+    left: 360px;
+    width: 120px;
+    border-bottom: 1px solid #ffffff;
+}
+article#Contact a.button span:last-of-type {
+    top: 38px;
+    left: 471px;
+    height: 11px;
+    border-right: 2px solid #ffffff;
+    transform: skew(60deg);
+}
+article#Contact a.button:hover span:first-of-type {
+    opacity: 0.7;
+    transform: translateX(10px);
+}
+article#Contact a.button:hover span:last-of-type {
+    opacity: 0.7;
+    transform: skew(60deg) translateX(10px);
+}
+
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+footer ul {
+    margin-bottom: unset;
+}
+p.copy {
+    float: right;
+}
+}
