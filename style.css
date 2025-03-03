@@ -10,7 +10,11 @@
     color: var(--font-color);
 }
 body {
-    font-family: "Source Sans 3", Meiryo, serif;
+    font-family: "Source Sans 3",
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    sans-serif;
     margin: unset;
     background-color: var(--main-bg-color);
 }
