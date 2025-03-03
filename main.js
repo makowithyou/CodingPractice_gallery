@@ -135,7 +135,11 @@ addEventListener(
         switch (scrollBy) {
         case "Top":
             menuOpen();
-            window.scrollTo(0, 0);
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
             break;
         case "Information":
             menuOpen();
@@ -159,6 +163,10 @@ addEventListener(
     }
 )
 
-function menuScroll(y) {
-    window.scrollBy(0, y);
+function menuScroll(top) {
+    window.scrollBy({
+        top: top,
+        left: 0,
+        behavior: "smooth",
+    });
 }
