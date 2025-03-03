@@ -112,12 +112,12 @@ addEventListener(
 const HamburgerButton = document.getElementById("HamburgerButton");
 HamburgerButton.addEventListener("click", menuOpen);
 
-function menuOpen(e) {
+function menuOpen() {
+    const HamburgerSpans = document.getElementsByClassName("HamburgerSpans");
     const HamburgerMenu = document.getElementById("HamburgerMenu");
-    Spans = e.currentTarget.children;
-        for (span of Spans) {
-            span.classList.toggle("open");
-        }
+    for (span of HamburgerSpans) {
+        span.classList.toggle("open");
+    }
     HamburgerMenu.classList.toggle("open");
 }
 
@@ -131,35 +131,34 @@ addEventListener(
         const GY = Gallery.getBoundingClientRect().y;
         const AY = Access.getBoundingClientRect().y;
         const CY = Contact.getBoundingClientRect().y;
-        const scrollTo = e.target.dataset.scrollTo;
-        switch (scrollTo) {
+        const scrollBy = e.target.dataset.scrollBy;
+        switch (scrollBy) {
         case "Top":
-            menuOpen(e);
-            menuScroll(0);
+            menuOpen();
+            window.scrollTo(0, 0);
             break;
         case "Information":
-            menuOpen(e);
+            menuOpen();
             menuScroll(IY);
             break;
         case "Gallery":
-            menuOpen(e);
+            menuOpen();
             menuScroll(GY);
             break;
         case "Access":
-            menuOpen(e);
+            menuOpen();
             menuScroll(AY);
             break;
         case "Contact":
-            menuOpen(e);
+            menuOpen();
             menuScroll(CY);
             break;
         default:
-            console.log("クリックされたのはメニューじゃない");
+            break;
         }
-        // menuScroll(GY);
     }
 )
 
-function menuScroll (y) {
-    window.scrollTo(0, y);
+function menuScroll(y) {
+    window.scrollBy(0, y);
 }
