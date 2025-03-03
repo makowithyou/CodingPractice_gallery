@@ -401,8 +401,6 @@ aside ul li button:hover {
 /*-------------------------------------------
 MainVisual
 -------------------------------------------*/
-div#MainVisual {
-}
 div#MainVisual img {
     width: calc(100% / 3);
 }
@@ -479,7 +477,7 @@ article#Gallery div.images img:nth-of-type(6) {
 Access
 -------------------------------------------*/
 article#Access {
-    padding: 480px 0;
+    padding-bottom: 480px;
 }
 
 
