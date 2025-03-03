@@ -261,6 +261,9 @@ article#Information.show {
 /*-------------------------------------------
 Gallery
 -------------------------------------------*/
+article#Gallery {
+    margin-bottom: 280px;
+}
 article#Gallery h2#GalleryTitle {
     opacity: 0;
 }
@@ -283,7 +286,7 @@ Access
 -------------------------------------------*/
 article#Access {
     background-position: center;
-    padding: 280px 0;
+    padding-bottom: 280px;
     text-align: center;
 }
 article#Access.show {
