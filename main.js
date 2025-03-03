@@ -7,10 +7,12 @@ const MainVisualImageOriginalWidth = parseInt(MainVisualImagesStyle.getPropertyV
 const MainTitle = document.getElementById("MainTitle");
 const Information = document.getElementById("Information");
 const InformationTitle = document.getElementById("InformationTitle");
+const Gallery = document.getElementById("Gallery");
 const GalleryTitle = document.getElementById("GalleryTitle");
 const GalleryImages = document.getElementsByClassName("GalleryImages");
 const Access = document.getElementById("Access");
 const AccessTitle = document.getElementById("AccessTitle");
+const Contact = document.getElementById("Contact");
 const ContactTitle = document.getElementById("ContactTitle");
 const WH = window.innerHeight;
 const WW = window.innerWidth;
@@ -20,10 +22,10 @@ addEventListener(
     "scroll", () => {
         const MVY = MainVisual.getBoundingClientRect().y;
         const MTY = MainTitle.getBoundingClientRect().y;
-        const IY = InformationTitle.getBoundingClientRect().y;
-        const GY = GalleryTitle.getBoundingClientRect().y;
-        const AY = AccessTitle.getBoundingClientRect().y;
-        const CT = ContactTitle.getBoundingClientRect().y;
+        const ITY = InformationTitle.getBoundingClientRect().y;
+        const GTY = GalleryTitle.getBoundingClientRect().y;
+        const ATY = AccessTitle.getBoundingClientRect().y;
+        const CTY = ContactTitle.getBoundingClientRect().y;
 
         // メインビジュアルの画像
         const img1 = MainVisualImages[0];
@@ -56,7 +58,6 @@ addEventListener(
         // スクロールしてヘッダーを表示
         if (window.scrollY > 520) {
             Header.classList.add("show");
-            console.log("window.scrollY > 520");
         } else {
             Header.classList.remove("show");
         }
@@ -66,22 +67,22 @@ addEventListener(
             MainTitle.classList.add("show");
         }
         // InformationTitleが画面下にきたら下からふわっと表示
-        if (IY < WH) {
+        if (ITY < WH) {
             Information.classList.add("show");
         }
         // GalleryTitleが画面下にきたら下からふわっと表示
-        if (GY < WH) {
+        if (GTY < WH) {
             GalleryTitle.classList.add("show");
         }
 
         // asideの表示・非表示
-        if (GY > WH) {
+        if (GTY > WH) {
             Aside.classList.remove("show"); // Galleryタイトルより上にいるときは非表示
         }
-        if (GY < WH) {
+        if (GTY < WH) {
             Aside.classList.add("show"); // Galleryタイトルが画面下にきたら右から左へスライド
         }
-        if (AY < WH) {
+        if (ATY < WH) {
             Aside.classList.remove("show"); // Accessタイトルが画面下にきたらスライドして非表示
         }
 
@@ -94,27 +95,71 @@ addEventListener(
         }
 
         // ACCESSの背景画像
-        if (AY > WH) {
+        if (ATY > WH) {
             Access.classList.remove("show"); // Accessタイトルより上にいるときは非表示
         }
-        if (AY < WH) {
+        if (ATY < WH) {
             Access.classList.add("show"); // Accessが画面下にきたら表示
         }
-        if (CT < WH) {
+        if (CTY < WH) {
             Access.classList.remove("show"); // Contactタイトルが画面下にきたら非表示
         }
     }
 )
 
+
 // ハンバーガーボタンとメニューの開閉
 const HamburgerButton = document.getElementById("HamburgerButton");
-const HamburgerMenu = document.getElementById("HamburgerMenu");
-HamburgerButton.addEventListener(
-    "click", (e) => {
+HamburgerButton.addEventListener("click", menuOpen);
+
+function menuOpen(e) {
+    const HamburgerMenu = document.getElementById("HamburgerMenu");
     Spans = e.currentTarget.children;
         for (span of Spans) {
             span.classList.toggle("open");
         }
-        HamburgerMenu.classList.toggle("open");
+    HamburgerMenu.classList.toggle("open");
+}
+
+
+
+// メニュークリック時の動作
+// const MenuLinks = document.getElementsByClassName("MenuLinks");
+addEventListener(
+    "click", (e) => {
+        const IY = Information.getBoundingClientRect().y;
+        const GY = Gallery.getBoundingClientRect().y;
+        const AY = Access.getBoundingClientRect().y;
+        const CY = Contact.getBoundingClientRect().y;
+        const scrollTo = e.target.dataset.scrollTo;
+        switch (scrollTo) {
+        case "Top":
+            menuOpen(e);
+            menuScroll(0);
+            break;
+        case "Information":
+            menuOpen(e);
+            menuScroll(IY);
+            break;
+        case "Gallery":
+            menuOpen(e);
+            menuScroll(GY);
+            break;
+        case "Access":
+            menuOpen(e);
+            menuScroll(AY);
+            break;
+        case "Contact":
+            menuOpen(e);
+            menuScroll(CY);
+            break;
+        default:
+            console.log("クリックされたのはメニューじゃない");
+        }
+        // menuScroll(GY);
     }
 )
+
+function menuScroll (y) {
+    window.scrollTo(0, y);
+}
